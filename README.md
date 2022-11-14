@@ -1,4 +1,4 @@
-# Placeholder OAuth Redirect URL
+## Placeholder OAuth Redirect URL
 
 I use [this repo](https://github.com/dtinth/oauth_gateway) as a [placeholder callback URL](https://oauth.spacet.me/) for OAuth apps.
 
@@ -6,8 +6,8 @@ I use [this repo](https://github.com/dtinth/oauth_gateway) as a [placeholder cal
 
 <script>
   {
-    const p = (t) => {
-      const el = document.createElement("p");
+    const h3 = (t) => {
+      const el = document.createElement("h3");
       el.textContent = t;
       return el;
     }
@@ -18,7 +18,7 @@ I use [this repo](https://github.com/dtinth/oauth_gateway) as a [placeholder cal
       el.appendChild(code);
       return el;
     }
-    document.getElementById("result").appendChild(p("Query:"));
+    document.getElementById("result").appendChild(h3("Query:"));
     document.getElementById("result").appendChild(pre(
       JSON.stringify(
         Object.fromEntries(new URLSearchParams(window.location.search)),
@@ -26,7 +26,7 @@ I use [this repo](https://github.com/dtinth/oauth_gateway) as a [placeholder cal
         2
       )
     ));
-    document.getElementById("result").appendChild(p("Hash:"));
+    document.getElementById("result").appendChild(h3("Hash:"));
     document.getElementById("result").appendChild(pre(
       JSON.stringify(
         Object.fromEntries(new URLSearchParams(window.location.hash.replace(/^#/, ""))),
