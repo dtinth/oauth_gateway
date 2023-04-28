@@ -11,5 +11,5 @@
   } else if (state.startsWith('localhost3000!')) {
     callbackUrl = 'http://localhost:3000/auth/callback'
   }
-  location.replace( + location.search)
+  location.replace(callbackUrl + location.search)
 </script>
