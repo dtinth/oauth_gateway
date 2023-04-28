@@ -4,5 +4,12 @@
 <style>body{font-family:sans-serif}</style>
 <p>Redirecting...</p>
 <script>
-location.replace('https://eventpop-ticket-gateway.vercel.app/callback.html' + location.search)
+  var callbackUrl = 'https://eventpop-ticket-gateway.vercel.app/callback.html'
+  var state = String(new URLSearchParams(location.search).get('state'))
+  if (state.startsWith('new!')) {
+    callbackUrl = 'https://new.creatorsgarten.org/auth/callback'
+  } else if (state.startsWith('localhost3000!')) {
+    callbackUrl = 'http://localhost:3000/auth/callback'
+  }
+  location.replace( + location.search)
 </script>
