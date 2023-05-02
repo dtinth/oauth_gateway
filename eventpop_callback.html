@@ -7,7 +7,7 @@
   var callbackUrl = 'https://eventpop-ticket-gateway.vercel.app/callback.html'
   var state = String(new URLSearchParams(location.search).get('state'))
   if (state.startsWith('new!')) {
-    callbackUrl = 'https://new.creatorsgarten.org/auth/callback'
+    callbackUrl = 'https://creatorsgarten.org/auth/callback'
   } else if (state.startsWith('localhost3000!')) {
     callbackUrl = 'http://localhost:3000/auth/callback'
   }
