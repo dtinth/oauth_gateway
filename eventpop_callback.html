@@ -8,8 +8,8 @@
   var state = String(new URLSearchParams(location.search).get('state'))
   if (state.startsWith('new!')) {
     callbackUrl = 'https://creatorsgarten.org/auth/callback'
-  } else if (state.startsWith('localhost3000!')) {
-    callbackUrl = 'http://localhost:3000/auth/callback'
+  } else if (state.match(/^localhost(\d{4})!/)) {
+    callbackUrl = `http://localhost:${state.match(/^localhost(\d{4})!/)[1]}/auth/callback`
   }
   location.replace(callbackUrl + location.search)
 </script>
